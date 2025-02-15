@@ -1,0 +1,30 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6E8EF6, #9B51E0);
+    color: #fff;
+}
+
+/* Login Page */
+#login-page {
+    width: 100%;
+    height: 100vh;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    font-weight: 600;
+}
+
+/* Dashboard Navbar */
+.bg-gradient {
+    background: linear-gradient(135deg, #3A1C71, #D76D77, #FFAF7B);
+}
