@@ -42,3 +42,15 @@ export function loadTimetableModule(container) {
         document.getElementById('timetableForm').reset();
         document.getElementById('timetableIndex').value = '';
   }
+  
+  window.editTimetable = function(e) {
+    const index = e.target.getAttribute('data-index');
+    const tt = timetables[index];
+    document.getElementById('timetableDay').value = tt.day;
+    document.getElementById('timetableTime').value = tt.time;
+    document.getElementById('timetableSubject').value = tt.subject;
+    document.getElementById('timetableRoom').value = tt.room;
+    document.getElementById('instructorId').value = tt.instructorId; // New field
+    document.getElementById('instructorName').value = tt.instructorName; // New field
+    document.getElementById('timetableIndex').value = index;
+};
