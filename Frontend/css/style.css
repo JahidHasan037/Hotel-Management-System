@@ -28,3 +28,35 @@ body {
 .bg-gradient {
     background: linear-gradient(135deg, #3A1C71, #D76D77, #FFAF7B);
 }
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Module Section */
+.module-section {
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333;
+    padding: 20px; /* Inner padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin-bottom: 20px; /* Margin below the card */
+}
+
+h3 {
+    color: #343a40; /* Dark gray color for headings */
+    margin-bottom: 15px; /* Space below headings */
+}
+
+table {
+    background: white; /* White background for tables */
+    color: black; /* Black text for readability */
+    margin-top: 20px; /* Space above the table */
+}
+
+table th {
+    background: #3A1C71; /* Dark background for table headers */
+    color: white; /* White text for headers */
+}
+
+/* Form Controls */
