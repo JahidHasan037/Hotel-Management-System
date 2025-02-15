@@ -54,3 +54,9 @@ export function loadTimetableModule(container) {
     document.getElementById('instructorName').value = tt.instructorName; // New field
     document.getElementById('timetableIndex').value = index;
 };
+
+window.deleteTimetable = function(e) {
+    timetables.splice(e.target.getAttribute('data-index'), 1);
+    saveTimetables();
+    renderTimetable();
+};
