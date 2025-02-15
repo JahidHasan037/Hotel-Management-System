@@ -34,3 +34,11 @@ export function loadTimetableModule(container) {
         const subject = document.getElementById('timetableSubject').value;
         const room = document.getElementById('timetableRoom').value;
         const instructorId = document.getElementById('instructorId').value; // New field
+        const instructorName = document.getElementById('instructorName').value; // New field
+        const tt = { day, time, subject, room, instructorId, instructorName }; // Updated object
+        index === "" ? timetables.push(tt) : timetables[index] = tt;
+        saveTimetables();
+        renderTimetable();
+        document.getElementById('timetableForm').reset();
+        document.getElementById('timetableIndex').value = '';
+  }
