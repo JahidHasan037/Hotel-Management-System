@@ -69,3 +69,40 @@ container.innerHTML = `
     <div class="form-group">
       <input type="text" id="timetableDay" class="form-control" placeholder="Day (e.g., Monday)" required>
     </div>
+    <div class="form-group">
+          <input type="time" id="timetableTime" class="form-control" placeholder="Time" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="timetableSubject" class="form-control" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="timetableRoom" class="form-control" placeholder="Room" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="instructorId" class="form-control" placeholder="Instructor ID" required> <!-- New field -->
+        </div>
+        <div class="form-group">
+          <input type="text" id="instructorName" class="form-control" placeholder="Instructor Name" required> <!-- New field -->
+        </div>
+        <button type="submit" class="btn btn-primary">Save Timetable</button>
+      </form>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Subject</th>
+            <th>Room</th>
+            <th>Instructor ID</th> <!-- New column -->
+            <th>Instructor Name</th> <!-- New column -->
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="timetableTable"></tbody>
+      </table>
+    </div>
+  `;
+
+  document.getElementById('timetableForm').addEventListener('submit', addOrUpdateTimetable);
+  renderTimetable();
+}
