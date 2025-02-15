@@ -60,3 +60,12 @@ window.deleteTimetable = function(e) {
     saveTimetables();
     renderTimetable();
 };
+
+container.innerHTML = `
+<div class="module-section">
+  <h3>Timetable Management Module</h3>
+  <form id="timetableForm" class="mb-3">
+    <input type="hidden" id="timetableIndex">
+    <div class="form-group">
+      <input type="text" id="timetableDay" class="form-control" placeholder="Day (e.g., Monday)" required>
+    </div>
