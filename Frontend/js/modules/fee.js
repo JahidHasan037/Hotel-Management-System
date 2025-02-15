@@ -58,3 +58,45 @@ export function loadFeeModule(container) {
         saveFees();
         renderFees();
     };
+    
+  container.innerHTML = `
+  <div class="module-section">
+      <h3>Fee Management Module</h3>
+      <form id="feeForm" class="mb-3">
+          <input type="hidden" id="feeIndex">
+          <div class="form-group">
+              <input type="text" id="feeStudent" class="form-control" placeholder="Student Name" required>
+          </div>
+          <div class="form-group">
+              <input type="number" id="feeAmount" class="form-control" placeholder="Amount" required>
+          </div>
+          <div class="form-group">
+              <input type="date" id="feeDate" class="form-control" required>
+          </div>
+          <div class="form-group">
+              <input type="text" id="feeYear" class="form-control" placeholder="Year" required>
+          </div>
+          <div class="form-group">
+              <input type="text" id="feeSemester" class="form-control" placeholder="Semester" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Fee</button>
+      </form>
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th>Student</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Year</th>
+                  <th>Semester</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody id="feeTable"></tbody>
+      </table>
+  </div>
+`;
+
+document.getElementById('feeForm').addEventListener('submit', addOrUpdateFee);
+renderFees();
+}
