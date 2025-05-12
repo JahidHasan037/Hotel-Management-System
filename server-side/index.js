@@ -150,3 +150,149 @@ async function run() {
             res.send(result);
 
         })
+        // api for adding meal data into db 
+                app.post('/meals', verifyToken, async (req, res) => {
+        
+                    const mealItem = req.body; //console.log(mealItem);
+                    const result = await mealCollection.insertOne(mealItem);
+                    res.send(result);
+                })
+                //api for updating single meal
+                app.patch('/meal/:id', verifyToken, verifyAdmin, async (req, res) => {
+        
+                    const mealItem = req.body;
+        
+                    const {
+                        name,
+                        details,
+                        image: display_url,
+                        category,
+                        price,
+                        mealType,
+                        distributorName,
+                        distributorEmail,
+                        ingredients,
+                        postTime,
+                    } = mealItem
+        
+                    const id = req.params.id;
+        
+                    const query = { _id: new ObjectId(id) }
+        
+                    const updateDoc = {
+                        $set: {
+                            name,
+                            details,
+                            image: display_url,
+                            category,
+                            price,
+                            mealType,
+                            distributorName,
+                            distributorEmail,
+                            ingredients,
+                            postTime,
+                        }
+                    }
+        
+                    const result = await mealCollection.updateOne(query, updateDoc);
+                    res.send(result);
+        
+                })
+                // api for updating reaction count in meal 
+                app.patch('/meal/like/:id', verifyToken, async (req, res) => {
+        
+                    const id = req.params.id; //console.log('id', id);
+        
+                    const reactionCount = req?.body?.reactionCount;  // console.log(req.body);
+        
+                    const query = { _id: new ObjectId(id) };//-------------critical area if there is no object id with object it will cause error
+        
+                    const options = { upsert: true };
+        
+                    const updateDoc = {
+                        $set: {
+                            reactionCount
+                        }
+                    }
+        
+                    const result = await mealCollection.updateOne(query, updateDoc, options);
+        
+                    res.send(result)
+                })
+                //api for deleting single meal
+                app.delete('/meal/:id', verifyToken, verifyAdmin, async (req, res) => {
+        
+                    const id = req.params.id;// console.log(id);
+        
+                    const query = { _id: new ObjectId(id) }
+        
+                    const result = await mealCollection.deleteOne(query); //console.log(result);
+        
+                    res.send(result);
+        
+                })
+        
+        
+                //review related api
+        
+                // api for getting review count from db 
+                app.get('/review-count', async (req, res) => {
+        
+                    const reviewCount = await reviewCollection.estimatedDocumentCount();
+                    res.send({ reviewCount });
+        
+                })
+                // api for getting all reviews  from db 
+                app.get('/reviews', async (req, res) => {
+        
+                    const email = req?.query?.email;
+                    const meal_id = req?.query?.meal_id; //console.log(req?.query?.meal_id);
+        
+                    let query = {};
+        
+                    if (email && email !== 'undefined') {
+                        query.user_email = email;
+                    }
+                    if (meal_id && meal_id !== 'undefined') {
+                        query.meal_id = meal_id;
+                    }
+                    // console.log(query)
+        
+                    const result = await reviewCollection.find(query).toArray(); console.log(result)
+                    res.send(result);
+        
+        
+                })
+                // api for posting user reviews to db 
+                app.post('/review', verifyToken, async (req, res) => {
+                    const review = req.body;
+        
+                    const result = await reviewCollection.insertOne(review);
+                    res.send(result);
+                })
+                //api for updating user review 
+                app.patch('/review/:id', verifyToken, async (req, res) => {
+        
+                    const reviewText = req.body.reviewText;
+                    const id = req.params.id;
+        
+                    const query = { _id: new ObjectId(id) }
+        
+                    const updateDoc = {
+                        $set: {
+                            reviewText
+                        }
+                    }
+        
+                    const result = await reviewCollection.updateOne(query, updateDoc);
+                    res.send(result);
+        
+                })
+                // api for deleting a review 
+                app.delete('/review/:id', verifyToken, verifyAdmin, async (req, res) => {
+                    const id = req.params.id;
+                    const query = { _id: new ObjectId(id) };
+        
+                    const result = await reviewCollection.deleteOne(query);
+                    res.send(result);
+                })
