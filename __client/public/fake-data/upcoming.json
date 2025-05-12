@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Margherita Pizza",
+        "details": "Classic pizza topped with fresh mozzarella, basil, and a drizzle of olive oil, baked to perfection.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "pizza",
+        "price": 10.99,
+        "rating": 4.5,
+        "mealType": "lunch",
+        "distributorName": "Italian Delights",
+        "ingredients": [
+            "Fresh mozzarella",
+            "Tomato sauce",
+            "Basil",
+            "Olive oil",
+            "Pizza dough"
+        ],
+        "postTime": "2025-01-20",
+        "reviews_count": 120,
+        "reactionCount": 0
+    },
+    {
+        "name": "Chicken Caesar Salad",
+        "details": "Crisp romaine lettuce, grilled chicken breast, croutons, and parmesan cheese with creamy Caesar dressing.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "salad",
+        "price": 8.5,
+        "rating": 4.3,
+        "mealType": "dinner",
+        "distributorName": "Healthy Bites",
+        "ingredients": [
+            "Romaine lettuce",
+            "Grilled chicken",
+            "Croutons",
+            "Parmesan cheese",
+            "Caesar dressing"
+        ],
+        "postTime": "2025-01-21",
+        "reviews_count": 65,
+        "reactionCount": 0
+    },
+    {
+        "name": "Berry Smoothie Bowl",
+        "details": "A delightful blend of mixed berries, banana, and almond milk, topped with granola and fresh fruits.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "dessert",
+        "price": 7.25,
+        "rating": 4.8,
+        "mealType": "breakfast",
+        "distributorName": "Fresh Start",
+        "ingredients": [
+            "Mixed berries",
+            "Banana",
+            "Almond milk",
+            "Granola",
+            "Fresh fruits"
+        ],
+        "postTime": "2025-01-22",
+        "reviews_count": 95,
+        "reactionCount": 0
+    },
+    {
+        "name": "Beef Tacos",
+        "details": "Juicy seasoned beef wrapped in a soft tortilla, topped with fresh salsa, cheese, and sour cream.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "taco",
+        "price": 9.0,
+        "rating": 4.6,
+        "mealType": "lunch",
+        "distributorName": "Taco Heaven",
+        "ingredients": [
+            "Seasoned beef",
+            "Soft tortilla",
+            "Fresh salsa",
+            "Cheese",
+            "Sour cream"
+        ],
+        "postTime": "2025-01-23",
+        "reviews_count": 110,
+        "reactionCount": 0
+    },
+    {
+        "name": "Grilled Salmon",
+        "details": "Perfectly grilled salmon fillet served with steamed asparagus and a lemon butter sauce.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "seafood",
+        "price": 14.75,
+        "rating": 4.7,
+        "mealType": "dinner",
+        "distributorName": "Ocean Feast",
+        "ingredients": [
+            "Salmon fillet",
+            "Asparagus",
+            "Lemon butter sauce",
+            "Salt",
+            "Pepper"
+        ],
+        "postTime": "2025-01-24",
+        "reviews_count": 130,
+        "reactionCount": 0
+    },
+    {
+        "name": "Veggie Wrap",
+        "details": "A healthy wrap stuffed with fresh vegetables, hummus, and a touch of garlic sauce.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "wrap",
+        "price": 6.99,
+        "rating": 4.4,
+        "mealType": "breakfast",
+        "distributorName": "Vegan Delights",
+        "ingredients": [
+            "Tortilla wrap",
+            "Fresh vegetables",
+            "Hummus",
+            "Garlic sauce",
+            "Spinach"
+        ],
+        "postTime": "2025-01-25",
+        "reviews_count": 75,
+        "reactionCount": 0
+    },
+    {
+        "name": "BBQ Ribs",
+        "details": "Tender pork ribs coated with a smoky BBQ sauce, served with coleslaw and fries.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "bbq",
+        "price": 15.0,
+        "rating": 4.9,
+        "mealType": "dinner",
+        "distributorName": "Smoky Delights",
+        "ingredients": [
+            "Pork ribs",
+            "BBQ sauce",
+            "Coleslaw",
+            "Fries",
+            "Seasoning"
+        ],
+        "postTime": "2025-01-26",
+        "reviews_count": 140,
+        "reactionCount": 0
+    },
+    {
+        "name": "Mango Cheesecake",
+        "details": "Creamy cheesecake infused with mango puree, topped with fresh mango slices.",
+        "image": "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "category": "dessert",
+        "price": 8.75,
+        "rating": 4.7,
+        "mealType": "dessert",
+        "distributorName": "Sweet Tooth",
+        "ingredients": [
+            "Cream cheese",
+            "Mango puree",
+            "Graham cracker crust",
+            "Fresh mango slices",
+            "Whipped cream"
+        ],
+        "postTime": "2025-01-27",
+        "reviews_count": 90,
+        "reactionCount": 0
+    }
+]

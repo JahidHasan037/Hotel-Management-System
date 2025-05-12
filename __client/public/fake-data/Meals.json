@@ -1,0 +1,224 @@
+[
+    {
+        "name": "Haddock",
+        "details": "A mouthwatering chargrilled fresh tuna steak, served medium rare, placed on a classic Niçoise salad with French beans, olives, and cherry tomatoes for a burst of flavor.",
+        "image": "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg",
+        "category": "salad",
+        "price": 14.7,
+        "rating": 4.5,
+        "mealType": "lunch",
+        "distributorName": "Ocean Fresh Distributors",
+        "ingredients": [
+            "Tuna steak",
+            "French beans",
+            "Olives",
+            "Cherry tomatoes",
+            "Salad greens",
+            "Dressing"
+        ],
+        "postTime": "2025-01-23",
+        "reviews_count": 120,
+        "reactionCount": 387
+    },
+    {
+        "name": "Haddock",
+        "details": "A perfectly chargrilled fresh tuna steak, served medium rare, accompanied by a delightful classic Niçoise salad with French beans and tangy dressing.",
+        "image": "https://images.pexels.com/photos/1598511/pexels-photo-1598511.jpeg",
+        "category": "drinks",
+        "price": 14.7,
+        "rating": 4.2,
+        "mealType": "dinner",
+        "distributorName": "Ocean Fresh Distributors",
+        "ingredients": [
+            "Tuna steak",
+            "French beans",
+            "Salad greens",
+            "Dressing"
+        ],
+        "postTime": "2025-01-24",
+        "reviews_count": 85,
+        "reactionCount": 254
+    },
+    {
+        "name": "Escalope de Veau",
+        "details": "A premium roasted duck breast, served pink, alongside creamy gratin potato and a rich, flavorful griottine cherry sauce.",
+        "image": "https://images.pexels.com/photos/1608176/pexels-photo-1608176.jpeg",
+        "category": "popular",
+        "price": 14.5,
+        "rating": 4.7,
+        "mealType": "dinner",
+        "distributorName": "Fine Cuts Suppliers",
+        "ingredients": [
+            "Duck breast",
+            "Gratin potato",
+            "Griottine cherry sauce"
+        ],
+        "postTime": "2025-01-22",
+        "reviews_count": 150,
+        "reactionCount": 432
+    },
+    {
+        "name": "Escalope de Veau",
+        "details": "A delightful pan-roasted haddock fillet wrapped in smoked French bacon, paired with creamy pea purée and a tomato and chive vinaigrette.",
+        "image": "https://images.pexels.com/photos/1616742/pexels-photo-1616742.jpeg",
+        "category": "dessert",
+        "price": 12.5,
+        "rating": 4.3,
+        "mealType": "breakfast",
+        "distributorName": "Gourmet Select",
+        "ingredients": [
+            "Haddock fillet",
+            "Smoked French bacon",
+            "Pea purée",
+            "Tomato",
+            "Chives",
+            "Vinaigrette"
+        ],
+        "postTime": "2025-01-21",
+        "reviews_count": 92,
+        "reactionCount": 128
+    },
+    {
+        "name": "Roast Duck Breast",
+        "details": "Tender roasted duck breast, served pink, accompanied by creamy gratin potato and topped with a rich, tangy griottine cherry sauce.",
+        "image": "https://images.pexels.com/photos/1623395/pexels-photo-1623395.jpeg",
+        "category": "popular",
+        "price": 14.5,
+        "rating": 4.6,
+        "mealType": "lunch",
+        "distributorName": "Fine Cuts Suppliers",
+        "ingredients": [
+            "Duck breast",
+            "Gratin potato",
+            "Griottine cherry sauce"
+        ],
+        "postTime": "2025-01-25",
+        "reviews_count": 115,
+        "reactionCount": 351
+    },
+    {
+        "name": "Escalope de Veau",
+        "details": "Pan-roasted haddock fillet delicately wrapped in smoked French bacon, served with a vibrant pea purée and tangy tomato chive vinaigrette.",
+        "image": "https://images.pexels.com/photos/1633177/pexels-photo-1633177.jpeg",
+        "category": "dessert",
+        "price": 12.5,
+        "rating": 4.0,
+        "mealType": "dinner",
+        "distributorName": "Gourmet Select",
+        "ingredients": [
+            "Haddock fillet",
+            "Smoked French bacon",
+            "Pea purée",
+            "Tomato",
+            "Chives",
+            "Vinaigrette"
+        ],
+        "postTime": "2025-01-20",
+        "reviews_count": 105,
+        "reactionCount": 472
+    },
+    {
+        "name": "Escalope de Veau",
+        "details": "Pan-roasted haddock fillet, smoked French bacon wrapping adds a crispy touch, served with a pea purée and a tomato vinaigrette.",
+        "image": "https://images.pexels.com/photos/1648347/pexels-photo-1648347.jpeg",
+        "category": "pizza",
+        "price": 12.5,
+        "rating": 4.2,
+        "mealType": "breakfast",
+        "distributorName": "Gourmet Select",
+        "ingredients": [
+            "Haddock fillet",
+            "Smoked French bacon",
+            "Pea purée",
+            "Tomato",
+            "Vinaigrette"
+        ],
+        "postTime": "2025-01-18",
+        "reviews_count": 80,
+        "reactionCount": 219
+    },
+    {
+        "name": "Breton Fish Stew",
+        "details": "A hearty chargrilled chicken dish, served with fresh avocado, baby gem lettuce, shallots, French beans, walnuts, and mustard dressing.",
+        "image": "https://images.pexels.com/photos/1651286/pexels-photo-1651286.jpeg",
+        "category": "pizza",
+        "price": 12.9,
+        "rating": 4.4,
+        "mealType": "lunch",
+        "distributorName": "Coastal Catch Co.",
+        "ingredients": [
+            "Chicken",
+            "Avocado",
+            "Lettuce",
+            "Shallots",
+            "French beans",
+            "Walnuts",
+            "Mustard dressing"
+        ],
+        "postTime": "2025-01-16",
+        "reviews_count": 135,
+        "reactionCount": 495
+    },
+    {
+        "name": "Chicken and Walnut Salad",
+        "details": "Pan-roasted pork belly served with gratin potato, braised Savoy cabbage, sweet apples, aromatic thyme, and a rich calvados jus.",
+        "image": "https://images.pexels.com/photos/1666200/pexels-photo-1666200.jpeg",
+        "category": "salad",
+        "price": 13.5,
+        "rating": 4.1,
+        "mealType": "dinner",
+        "distributorName": "Farmhouse Delights",
+        "ingredients": [
+            "Pork belly",
+            "Gratin potato",
+            "Savoy cabbage",
+            "Apples",
+            "Thyme",
+            "Calvados jus"
+        ],
+        "postTime": "2025-01-14",
+        "reviews_count": 65,
+        "reactionCount": 178
+    },
+    {
+        "name": "Escalope de Veau",
+        "details": "Haddock fillet roasted to perfection, wrapped in crispy smoked French bacon, complemented by pea purée and tomato vinaigrette.",
+        "image": "https://images.pexels.com/photos/1675671/pexels-photo-1675671.jpeg",
+        "category": "soup",
+        "price": 12.5,
+        "rating": 4.3,
+        "mealType": "breakfast",
+        "distributorName": "Gourmet Select",
+        "ingredients": [
+            "Haddock fillet",
+            "Smoked French bacon",
+            "Pea purée",
+            "Tomato",
+            "Vinaigrette"
+        ],
+        "postTime": "2025-01-12",
+        "reviews_count": 110,
+        "reactionCount": 317
+    },
+    {
+        "name": "Chicken and Walnut Salad",
+        "details": "A tender pan-roasted pork belly served with creamy gratin potato, braised Savoy cabbage, fresh apples, thyme, and calvados jus.",
+        "image": "https://images.pexels.com/photos/1685184/pexels-photo-1685184.jpeg",
+        "category": "dessert",
+        "price": 13.5,
+        "rating": 4.5,
+        "mealType": "lunch",
+        "distributorName": "Farmhouse Delights",
+        "ingredients": [
+            "Pork belly",
+            "Gratin potato",
+            "Savoy cabbage",
+            "Apples",
+            "Thyme",
+            "Calvados jus"
+        ],
+        "postTime": "2025-01-11",
+        "reviews_count": 140,
+        "reactionCount": 456
+    }
+]
