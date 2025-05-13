@@ -296,3 +296,266 @@ async function run() {
                     const result = await reviewCollection.deleteOne(query);
                     res.send(result);
                 })
+
+                        //users related api
+                
+                        // api for getting user
+                        app.get('/users', async (req, res) => {
+                
+                            const email = req?.query?.email; console.log(req.query);
+                            const searchName = req?.query?.searchName;
+                            const searchMail = req?.query?.searchMail;
+                
+                            let query = {};
+                
+                            if (email && email !== 'undefined') {
+                                query.email = email;
+                            }
+                            if (searchName && searchName !== 'undefined') {
+                                query.name = { $regex: new RegExp(searchName, 'i') }
+                            }
+                            if (searchMail && searchMail !== 'undefined') {
+                                query.email = { $regex: new RegExp(searchMail, 'i') }
+                            }
+                
+                            const result = await userCollection.find(query).toArray(); //console.log(result)
+                            res.send(result);
+                
+                        })
+                        // api for checking admin or not 
+                        app.get('/user/admin/:email', verifyToken, async (req, res) => {
+                
+                            const email = req?.params?.email;
+                            const query = { email };
+                
+                            const user = await userCollection.findOne(query); //console.log(user);
+                
+                            const isAdmin = user?.role === 'admin' || user?.role === 'Admin'; //console.log(isAdmin);
+                            res.send({ isAdmin })
+                
+                        })
+                        // api for updating user role as admin 
+                        app.patch('/user/admin/:id', verifyToken, verifyAdmin, async (req, res) => {
+                
+                            const id = req.params.id;
+                
+                            const query = { _id: new ObjectId(id) }
+                
+                            const options = { upsert: true }
+                
+                            const updateDoc = {
+                                $set: {
+                                    role: "Admin"
+                                }
+                            }
+                
+                            const result = await userCollection.updateOne(query, updateDoc, options);
+                            res.send(result);
+                        })
+                        //api for updating users membership and payment status 
+                        app.patch('/user/:email', verifyToken, async (req, res) => {
+                
+                            const email = req.params.email; (email);
+                
+                            const membership = req.query?.membership; //console.log(req.query);
+                
+                            const query = { email: email }; //console.log(query);
+                
+                            const options = { upsert: true }
+                
+                            const updateDoc = {
+                                $set: {
+                                    membership,
+                                }
+                            }
+                
+                            const result = await userCollection.updateOne(query, updateDoc, options); //console.log(result);
+                            res.send(result);
+                        })
+                        // api for adding a unique user in db 
+                        app.post('/user', async (req, res) => {
+                
+                            const user = req.body; // console.log(user);
+                
+                            const query = { email: user?.email }
+                
+                            const existingUser = await userCollection.findOne(query);  // console.log('exists', existingUser);
+                
+                            if (existingUser) {
+                                // console.log('returning');
+                                return res.send({ message: 'user already exists ', insertedId: null })
+                            }
+                
+                            const result = await userCollection.insertOne(user);
+                
+                            return res.send(result);
+                
+                        })
+                
+                        //upcoming meal related api
+                
+                        //api for upcoming meals
+                        app.get('/upcoming', async (req, res) => {
+                
+                            const sorted = req?.query?.sorted; //console.log(req.query);
+                            let sortQuery = {}
+                
+                            if (sorted == 'true') {
+                                sortQuery = { reactionCount: -1 }
+                            }
+                            const result = await upcomingCollection.find().sort(sortQuery).toArray();// console.log(result);
+                            res.send(result);
+                
+                        })
+                        //api for adding upcoming meal
+                        app.post('/upcoming', verifyToken, async (req, res) => {
+                            const mealItem = req.body; //console.log(mealItem);
+                            const result = await upcomingCollection.insertOne(mealItem);
+                            res.send(result);
+                        })
+                        // api for updating reaction count in upcoming meal 
+                        app.patch('/upcoming/reactionCount/:id', verifyToken, async (req, res) => {
+                
+                            const id = req.params.id; //console.log('id', id);
+                
+                            const reactionCount = req?.body?.reactionCount;  // console.log(req.body);
+                
+                            const query = { _id: new ObjectId(id) };//-------------critical area if there is no object id with object it will cause error
+                
+                
+                            const updateDoc = {
+                                $set: {
+                                    reactionCount
+                                }
+                            }
+                
+                            const result = await upcomingCollection.updateOne(query, updateDoc);
+                
+                            res.send(result)
+                        })
+                        //api for deleting upcoming meals
+                        app.delete('/upcoming/:id', verifyToken, async (req, res) => {
+                            const id = req.params.id; //console.log(id);
+                            const query = { _id: new ObjectId(id) };
+                
+                            const result = await upcomingCollection.deleteOne(query);
+                            res.send(result);
+                        })
+                
+                
+                        //Requested Meal related api
+                
+                
+                        // api for getting all requested meal 
+                        app.get('/requested-meal', verifyToken, async (req, res) => {
+                
+                            const email = req?.query?.email; console.log(req.query);
+                            const searchName = req?.query?.searchName;
+                            const searchMail = req?.query?.searchMail;
+                
+                            let query = {};
+                
+                            if (email && email !== 'undefined') {
+                                query.user_email = email; //console.log(query);
+                            }
+                            if (searchName && searchName !== 'undefined') {
+                                query.user_name = { $regex: new RegExp(searchName, 'i') }
+                            }
+                            if (searchMail && searchMail !== 'undefined') {
+                                query.user_email = { $regex: new RegExp(searchMail, 'i') }
+                            }
+                            const result = await requestedCollection.find(query).toArray(); console.log(result);
+                            res.send(result)
+                
+                        })
+                        //api for adding a requested meal
+                        app.post('/requested-meal', verifyToken, async (req, res) => {
+                
+                            const reqItem = req.body;// console.log(reqItem);
+                            const result = await requestedCollection.insertOne(reqItem); //console.log(result);
+                            res.send(result);
+                        })
+                        // api for updating status to served in serve meal
+                        app.patch('/requested-meal/:id', verifyToken, verifyAdmin, async (req, res) => {
+                
+                            const id = req.params.id;
+                
+                            const query = { _id: new ObjectId(id) }
+                
+                            const updateDoc = {
+                                $set: {
+                                    status: "Delivered"
+                                }
+                            }
+                            const result = await requestedCollection.updateOne(query, updateDoc);
+                            res.send(result);
+                
+                        })
+                        //api for cancelling request
+                        app.delete('/requested-meal/:id', verifyToken, verifyAdmin, async (req, res) => {
+                            const id = req.params.id;
+                            const query = { _id: new ObjectId(id) };
+                
+                            const result = await requestedCollection.deleteOne(query);
+                            res.send(result);
+                        })
+                
+                
+                
+                        //payment related api
+                
+                        //api for getting all payment of a user
+                        app.get('/payment', verifyToken, async (req, res) => {
+                
+                            const email = req?.query?.email; console.log(email);
+                
+                            let query = {};
+                
+                            if (email && email !== 'undefined') {
+                                query = { user_email: email }
+                            }
+                
+                            const result = await paymentCollection.find(query).toArray(); console.log(result);
+                            res.send(result);
+                
+                        })
+                        // api for payment intent 
+                        app.post('/create-payment-intent', verifyToken, async (req, res) => {
+                            const { price } = req.body;
+                            const amount = parseInt(price * 100);
+                            console.log(amount, 'amount inside the intent')
+                
+                            const paymentIntent = await stripe.paymentIntents.create({
+                                amount: amount,
+                                currency: 'usd',
+                                payment_method_types: ['card']
+                            });
+                
+                            res.send({
+                                clientSecret: paymentIntent.client_secret
+                            })
+                        });
+                        // api for adding payment into db payment collection
+                        app.post('/payment', verifyToken, async (req, res) => {
+                
+                            const payment = req.body; console.log(payment);
+                            const result = await paymentCollection.insertOne(payment);
+                            res.send(result);
+                        })
+                
+                    } finally {
+                
+                    }
+                }
+                run().catch(console.dir);
+                
+                
+                
+                app.get('/', (req, res) => {
+                    res.send('Hello Server ')
+                })
+                
+                app.listen(port, () => {
+                    console.log(`server is running properly at : ${port}`);
+                })
+                
