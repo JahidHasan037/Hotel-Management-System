@@ -75,7 +75,7 @@ const Navbar = () => {
                 {/* logo with website name  */}
                 <div className="flex items-center">
                     <img className="h-15 rounded-2xl hidden lg:block" src={logo} alt="" />
-                    <Link className="btn btn-ghost text-xl">Chill Hostel</Link>
+                    <Link className="btn btn-ghost text-xl">Chill Hotel</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
