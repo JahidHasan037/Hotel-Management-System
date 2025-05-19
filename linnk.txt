@@ -1,0 +1,5 @@
+Project:   http://hostel-management-32.web.app/
+
+Portfolio: http://127.0.0.1:5500/index.html
+
+netifly: http://funny-brigadeiros-20fa18.netlify.app/
